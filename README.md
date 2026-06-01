@@ -1,4 +1,4 @@
-# Princesa Penthouse Flier
+# Princesa Penthouse Flyer
 
 A simple one-page landing page for an owner-direct penthouse rental at Princesa
 de Puerto Penasco.
