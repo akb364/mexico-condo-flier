@@ -282,6 +282,62 @@ h3 {
   color: var(--muted);
 }
 
+.photo-section {
+  padding: clamp(64px, 9vw, 118px) clamp(20px, 6vw, 72px);
+  background: var(--paper);
+}
+
+.photo-heading {
+  max-width: 760px;
+  margin-bottom: clamp(28px, 5vw, 48px);
+}
+
+.photo-heading p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.photo-card {
+  position: relative;
+  min-height: 250px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 12px 34px rgba(4, 36, 43, 0.12);
+}
+
+.photo-card-large {
+  grid-column: span 2;
+  grid-row: span 2;
+  min-height: 514px;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.photo-card figcaption {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--deep-aqua);
+  padding: 8px 12px;
+  font-size: 0.84rem;
+  font-weight: 900;
+}
+
 .location-section {
   background: #edf4ef;
 }
@@ -309,13 +365,17 @@ h3 {
 }
 
 .contact-section {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
   align-items: center;
-  justify-content: space-between;
-  gap: 30px;
+  gap: clamp(28px, 5vw, 56px);
   padding: clamp(58px, 8vw, 92px) clamp(20px, 6vw, 72px);
   background: var(--deep-aqua);
   color: var(--white);
+}
+
+.contact-copy {
+  min-width: 0;
 }
 
 .contact-section .eyebrow {
@@ -332,6 +392,27 @@ h3 {
 
 .phone-link {
   color: rgba(255, 255, 255, 0.9);
+  font-weight: 900;
+}
+
+.owner-card {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.owner-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  display: block;
+  object-fit: cover;
+}
+
+.owner-card figcaption {
+  padding: 12px 14px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.86rem;
   font-weight: 900;
 }
 
@@ -368,8 +449,16 @@ footer p {
   }
 
   .section,
-  .feature-band {
+  .feature-band,
+  .photo-grid {
     grid-template-columns: 1fr;
+  }
+
+  .photo-card,
+  .photo-card-large {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: 320px;
   }
 
   .quick-facts div {
@@ -378,7 +467,11 @@ footer p {
   }
 
   .contact-section {
-    display: block;
+    grid-template-columns: 1fr;
+  }
+
+  .owner-card {
+    max-width: 340px;
   }
 }
 
